@@ -29,7 +29,7 @@ echo "List of reachable hosts"
 
 host_reachable=$(cat /tmp/reachable | awk '{print $1}')
 
-    if [ -f $host_reachable ]; then
+    if [ -f /tmp/reachable ]; then
 
         echo $host_reachable | tr ' ' ' \n' | sort
 
