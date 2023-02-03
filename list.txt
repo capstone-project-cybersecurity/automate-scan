@@ -1,1 +1,2 @@
 www.lala.com
+localhost
