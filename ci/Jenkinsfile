@@ -2,6 +2,11 @@ pipeline {
 
     agent any
 
+    // ToDo later
+    //triggers {
+    //    cron('H */4 * * 1-5')
+    //}
+
     stages {
 
         stage('Running scan') {
@@ -20,6 +25,9 @@ pipeline {
             post {
                 success {
                     sh 'echo "All good!!!"'
+                }
+                failure {
+                    sh 'echo "I failed :("'
                 }
             }
 }
