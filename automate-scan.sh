@@ -27,11 +27,13 @@ echo "Finishing pingsweep"
 
 echo "List of reachable hosts"
 
-host_reachable=$(cat /tmp/reachable | awk '{print $1}') && echo $host_reachable | tr ' ' ' \n' | sort
+host_reachable=$(cat /tmp/reachable | awk '{print $1}')
 
 status_host_reachable=$?
 
     if [ $status_host_reachable -eq 0 ]; then
+
+        echo $host_reachable | tr ' ' ' \n' | sort
 
         echo "Starting network scan"
 
@@ -45,9 +47,7 @@ status_host_reachable=$?
 
         rm -f /tmp/reachable
         echo "Finishing network scan"
-
     else
-
         echo "Error"
         exit 1
     fi
