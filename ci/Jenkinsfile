@@ -23,12 +23,11 @@ pipeline {
         }
     }
             post {
-                success {
-                    sh 'echo "All good!!!"'
-                       emailext (
+                always {
+                    emailext (
                        to: 'daniel.gomez.amaran@gmail.com',
                        subject: 'Jenkins Build Results',
-                       body: 'The build has completed.\n\nStatus: ${currentBuild.currentResult}',
+                       body: 'The build has completed',
                        )
                 }
                 failure {
