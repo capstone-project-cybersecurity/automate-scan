@@ -25,7 +25,11 @@ pipeline {
             post {
                 success {
                     sh 'echo "All good!!!"'
-                    //slackSend "Build deployed successfully - ${env.JOB_NAME} ${env.BUILD_NUMBER} (<${env.BUILD_URL}|Open>)"
+                    slackSend (
+        color: '#36a64f',
+        message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} is complete: ${currentBuild.currentResult}",
+        channel: '#general',
+      )
                 }
                 failure {
                     sh 'echo "I failed :("'
