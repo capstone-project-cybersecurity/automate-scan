@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 # pingsweep function
 
 function pingsweep() {
