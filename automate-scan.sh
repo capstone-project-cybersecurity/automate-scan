@@ -29,9 +29,7 @@ echo "List of reachable hosts"
 
 host_reachable=$(cat /tmp/reachable | awk '{print $1}')
 
-status_host_reachable=$?
-
-    if [ $status_host_reachable -eq 0 ]; then
+    if [ -f $host_reachable ]; then
 
         echo $host_reachable | tr ' ' ' \n' | sort
 
@@ -48,7 +46,7 @@ status_host_reachable=$?
         rm -f /tmp/reachable
         echo "Finishing network scan"
     else
-        echo "Error"
+        echo "Error, you will need to give some URL, Domain or IP in the list.txt file
         exit 1
     fi
 
