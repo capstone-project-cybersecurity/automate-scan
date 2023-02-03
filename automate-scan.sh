@@ -46,7 +46,7 @@ host_reachable=$(cat /tmp/reachable | awk '{print $1}')
         rm -f /tmp/reachable
         echo "Finishing network scan"
     else
-        echo "Error, you will need to give some URL, Domain or IP in the list.txt file
+        echo "Error, you will need to give some URL, Domain or IP in the list.txt file"
         exit 1
     fi
 
