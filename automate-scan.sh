@@ -1,9 +1,12 @@
 #!/bin/bash
 
+# Cleaning workspace
+rm -f /tmp/reachable
+
+# Debug mode enabled
 set -x
 
 # pingsweep function
-
 function pingsweep() {
     target=$1
     host_reachable="/tmp/reachable"
@@ -16,7 +19,6 @@ function pingsweep() {
 }
 
 # Calling the pingsweep function and run it inside a for loop to each target=host in the loop.
-
 echo "Starting pingsweep"
 
 for hosts in $(cat list.txt); do
@@ -29,21 +31,18 @@ echo "List of reachable hosts"
 
 host_reachable=$(cat /tmp/reachable | awk '{print $1}')
 
-    if [ -f /tmp/reachable ]; then
+# Evaluating if the file /tmp/reachable is empty or exist for reachable hosts
+    if [ -s /tmp/reachable ]; then
 
         echo $host_reachable | tr ' ' ' \n' | sort
 
         echo "Starting network scan"
 
         # Nmap scanning inside a loop to get all host reachables after the pingsweep (I don't care the unrechable targets at this moment)
-
         for scan in $host_reachable; do
             nmap -sV --script=banner $scan
         done
 
-        # Deleting file from tmp directory
-
-        rm -f /tmp/reachable
         echo "Finishing network scan"
     else
         echo "Error, you will need to give some URL, Domain or IP in the list.txt file"
