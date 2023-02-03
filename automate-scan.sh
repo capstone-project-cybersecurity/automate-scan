@@ -27,9 +27,7 @@ echo "Finishing pingsweep"
 
 echo "List of reachable hosts"
 
-host_reachable=$(cat /tmp/reachable | awk '{print $1}')
-
-echo $host_reachable | tr ' ' ' \n' | sort
+host_reachable=$(cat /tmp/reachable | awk '{print $1}') && echo $host_reachable | tr ' ' ' \n' | sort
 
 status_host_reachable=$?
 
