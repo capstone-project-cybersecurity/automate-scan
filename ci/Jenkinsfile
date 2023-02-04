@@ -2,8 +2,6 @@ pipeline {
 
     agent any
 
-    def workspaceUrl = "${env.JENKINS_URL}/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/ws"
-
     //triggers {
     //    cron('* * * * *')
     //}
@@ -25,12 +23,15 @@ pipeline {
     }
             post {
                 success {
+                    script {
                     sh 'echo "Has succeeded"'
+                        def workspaceUrl = "${env.JENKINS_URL}/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/ws"
                         slackSend (
                         color: '#36a64f',
                         message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} has: ${currentBuild.currentResult}! - You can review here in JOB URL: $BUILD_URL - You can also review the workspace URL: ${workspaceUrl}",
                         channel: '#jenkins-pentesting-jobs',
                     )
+                    }
                 }
                 failure {
                     sh 'echo "Has failed"'
