@@ -27,7 +27,7 @@ pipeline {
                         slackSend (
                         color: '#36a64f',
                         message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} is ok: ${currentBuild.currentResult}",
-                        channel: '#general',
+                        channel: '#jenkins-pentesting-jobs',
                     )
                 }
                 failure {
@@ -35,7 +35,7 @@ pipeline {
                           slackSend (
                           color: '#d00000',
                           message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} has failed!",
-                          channel: '#General',
+                          channel: '#jenkins-pentesting-jobs',
                     )
                 }
             }
