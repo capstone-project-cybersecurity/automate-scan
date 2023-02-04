@@ -25,7 +25,7 @@ pipeline {
                 success {
                     script {
                     sh 'echo "Has succeeded"'
-                        def workspaceUrl = "${env.JENKINS_URL}job/${env.JOB_NAME}/${env.BUILD_NUMBER}/ws"
+                        def workspaceUrl = "${env.JENKINS_URL}job/${env.JOB_NAME}job/${env.BUILD_NUMBER}/ws"
                         slackSend (
                         color: '#36a64f',
                         message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} has: ${currentBuild.currentResult}! - You can review here in JOB URL: $BUILD_URL - also review the workspace URL: ${workspaceUrl}",
