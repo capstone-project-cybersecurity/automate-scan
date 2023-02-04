@@ -26,7 +26,7 @@ pipeline {
                     sh 'echo "All good!!!"'
                         slackSend (
                         color: '#36a64f',
-                        message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} is complete: ${currentBuild.currentResult}",
+                        message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} is ok: ${currentBuild.currentResult}",
                         channel: '#general',
                     )
                 }
