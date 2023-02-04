@@ -28,7 +28,7 @@ pipeline {
                         def workspaceUrl = "${BUILD_URL}ws"
                         slackSend (
                         color: '#36a64f',
-                        message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} has: ${currentBuild.currentResult}! - You can review the JOB URL: ${env.BUILD_URL} - also review the workspace URL: ${workspaceUrl}",
+                        message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} has: ${currentBuild.currentResult}! - You can review the JOB URL: ${env.BUILD_URL}console - also review the workspace URL: ${workspaceUrl}",
                         channel: '#jenkins-pentesting-jobs',
                     )
                     }
@@ -37,7 +37,7 @@ pipeline {
                     sh 'echo "Has failed"'
                           slackSend (
                           color: '#d00000',
-                          message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} has: ${currentBuild.currentResult}! - You can review the JOB URL: ${env.BUILD_URL}",
+                          message: "Build ${env.JOB_NAME} ${env.BUILD_NUMBER} has: ${currentBuild.currentResult}! - You can review the JOB URL: ${env.BUILD_URL}console",
                           channel: '#jenkins-pentesting-jobs',
                     )
                 }
