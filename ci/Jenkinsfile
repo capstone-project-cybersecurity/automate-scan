@@ -17,7 +17,7 @@ pipeline {
             steps {
                 git 'https://github.com/capstone-project-cybersecurity/automate-scan.git'
                 sh 'docker build -t automate-scan .'
-                sh 'docker run automate-scan || exit 1'
+                sh 'docker run automate-scan > output.txt || exit 1'
             }
         }
     }
