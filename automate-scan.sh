@@ -4,7 +4,7 @@
 rm -f /tmp/reachable
 
 # Debug mode enabled
-#set -x
+set -x
 
 # pingsweep function
 function pingsweep() {
