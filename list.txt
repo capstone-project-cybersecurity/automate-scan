@@ -1,3 +1,1 @@
-localhost
-danielitogomez.github.io
-www.lala.com
+192.168.1.55/24
