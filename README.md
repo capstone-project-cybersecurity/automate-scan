@@ -45,8 +45,7 @@ Clone the repository:
 git clone https://github.com/capstone-project-cybersecurity/automate-scan.git
 cd $PWD/automate-scan/ci
 docker build -t jenkins-customized-project .
-docker images | grep jenkins-customized-project # pick up the imageID
-docker tag d15ee13f395c danielgomeza/jenkins-customized-project
+docker tag $(docker images | grep jenkins-customized-project | awk '{print $3}') danielgomeza/jenkins-customized-project
 docker login
 docker push danielgomeza/jenkins-customized-project:latest
 docker-compose up -d
