@@ -116,6 +116,11 @@ curl http://localhost:8080 # test that you already can reach jenkins web locally
 
 [Scan finished with results](./img/scan-finished.jpg)
 
+
+### Flow diagram
+
+![Flow diagram](./img/diagram-flow.jpg)
+
 ### Contributing
 We welcome contributions to this project. If you would like to contribute, please fork the repository and create a pull request with your changes.
 
