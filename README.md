@@ -52,7 +52,7 @@ docker-compose up -d
 curl http://localhost:8080 # test that you already can reach jenkins web locally
 ```
 
-### Step by step with Jenkins (screenshots)
+### Step by step with Jenkins (screenshots).
 
 [Build Jenkins as container](./img/docker-build-jenkins.jpg)
 
@@ -116,11 +116,11 @@ curl http://localhost:8080 # test that you already can reach jenkins web locally
 
 [Scan finished with results](./img/scan-finished.jpg)
 
-### Flow diagram
+### Flow diagram.
 
 ![Flow diagram](./img/diagram-flow.jpg)
 
-### More information
+### More information.
 
 [What is bash script?](https://www.freecodecamp.org/news/shell-scripting-crash-course-how-to-write-bash-scripts-in-linux/)
 
@@ -130,8 +130,8 @@ curl http://localhost:8080 # test that you already can reach jenkins web locally
 
 [What is Jenkins?](https://www.freecodecamp.org/news/learn-jenkins-by-building-a-ci-cd-pipeline/)
 
-### Contributing
+### Contributing.
 We welcome contributions to this project. If you would like to contribute, please fork the repository and create a pull request with your changes.
 
-### License
+### License.
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
