@@ -116,10 +116,19 @@ curl http://localhost:8080 # test that you already can reach jenkins web locally
 
 [Scan finished with results](./img/scan-finished.jpg)
 
-
 ### Flow diagram
 
 ![Flow diagram](./img/diagram-flow.jpg)
+
+### More information
+
+[What is bash script?](https://www.freecodecamp.org/news/shell-scripting-crash-course-how-to-write-bash-scripts-in-linux/)
+
+[What is Nmap?](https://www.freecodecamp.org/news/what-is-nmap-and-how-to-use-it-a-tutorial-for-the-greatest-scanning-tool-of-all-time/)
+
+[What is Docker?](https://www.freecodecamp.org/news/what-is-docker-used-for-a-docker-container-tutorial-for-beginners/)
+
+[What is Jenkins?](https://www.freecodecamp.org/news/learn-jenkins-by-building-a-ci-cd-pipeline/)
 
 ### Contributing
 We welcome contributions to this project. If you would like to contribute, please fork the repository and create a pull request with your changes.
