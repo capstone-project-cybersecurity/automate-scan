@@ -6,12 +6,18 @@ pipeline {
     //    cron('*/5 * * * *')
     //}
 
+    environment {
+        OUTPUT_FILE = "output.txt"
+        GITHUB_URL = "https://github.com/capstone-project-cybersecurity/automate-scan.git"
+        REPOSITORY = "automate-scan"
+    }
+
     stages {
 
         stage('Cleaning workspace') {
 
             steps {
-                sh 'rm -rf output.txt'
+                sh "rm -rf ${OUTPUT_FILE}"
             }
         }
 
@@ -22,11 +28,11 @@ pipeline {
             }
 
             steps {
-                git 'https://github.com/capstone-project-cybersecurity/automate-scan.git'
+                git "${GITHUB_URL}"
                 script {
                 try {
-                    sh 'docker build -t automate-scan .'
-                    sh 'docker run automate-scan | tee output.txt'
+                    sh "docker build -t ${REPOSITORY} ."
+                    sh "docker run ${REPOSITORY} | tee ${OUTPUT_FILE}"
                 } catch (Exception e) {
                     echo "Build failed: ${e}"
                     }
