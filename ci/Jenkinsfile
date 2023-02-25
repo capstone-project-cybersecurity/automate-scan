@@ -29,7 +29,7 @@ pipeline {
                     sh 'docker run automate-scan | tee output.txt'
                 } catch (Exception e) {
                     echo "Build failed: ${e}"
-                }
+                    }
                 }
             }
         }
