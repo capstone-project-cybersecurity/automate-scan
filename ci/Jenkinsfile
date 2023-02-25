@@ -23,13 +23,14 @@ pipeline {
 
             steps {
                 git 'https://github.com/capstone-project-cybersecurity/automate-scan.git'
+                script {
                 try {
                     sh 'docker build -t automate-scan .'
                     sh 'docker run automate-scan | tee output.txt'
                 } catch (Exception e) {
                     echo "Build failed: ${e}"
                 }
-
+                }
             }
         }
     }
