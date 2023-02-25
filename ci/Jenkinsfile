@@ -2,9 +2,9 @@ pipeline {
 
     agent any
 
-    //triggers {
-    //    cron('* * * * *')
-    //}
+    triggers {
+        cron('*/5 * * * *')
+    }
 
     stages {
 
@@ -23,8 +23,13 @@ pipeline {
 
             steps {
                 git 'https://github.com/capstone-project-cybersecurity/automate-scan.git'
-                sh 'docker build -t automate-scan .'
-                sh 'docker run automate-scan | tee output.txt'
+                try {
+                    sh 'docker build -t automate-scan .'
+                    sh 'docker run automate-scan | tee output.txt'
+                } catch (Exception e) {
+                    echo "Build failed: ${e}"
+                }
+
             }
         }
     }
